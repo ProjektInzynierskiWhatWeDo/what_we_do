@@ -1,0 +1,14 @@
+Czcionka - Rodzina: Lato 
+Normalne napisy - Medium
+Pogrubione napisy - Semibold
+
+Kolor czcionki: 
+Widoczna - #ffffff
+Szara (np. nie masz konta?) - #a2a1b8
+
+Główne kolory:
+żółty - #f6d258
+
+Pozostałe kolory:
+Facebook - #385699
+Google + - #de4931
