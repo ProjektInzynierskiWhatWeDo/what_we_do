@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">WhatWeDo</string>
+    <string name="connectionError">Brak połączenia z internetem</string>
+    <string name="connectionAppError">Nie można się zalogować przepraszamy za userki</string>
+    <string name="connectionAppErrorRegister">Nie można się zarejestrować przepraszamy za userki</string>
+    <string name="loginError">Wystąpił błąd podczas logowania do aplikacji spróbuj ponownie</string>
+    <string name="loginToApp">Logowanie</string>
+    <string name="registerToApp">Rejestracja</string>
+
+    <!--login-->
+    <string name="editTextEmailHint">Email</string>
+    <string name="editTextPasswordHint">Hasło</string>
+    <string name="validateEmail">Błędny format email</string>
+    <string name="validatePasswordLogin">Podaj hasło</string>
+    <string name="noAccount">Nie masz konta w aplikacji ? Zarejestruj się</string>
+    <string name="editTextNameHint">Imię i nazwisko</string>
+    <string name="editTextPasswordAgainHint">Powtórz hasło</string>
+    <string name="validateName">Minimum 5 znaków</string>
+    <string name="validatePasswordAgain">Podane hasła różnią się od siebie</string>
+    <string name="validatePasswordRegister">Hasło musi mieć minimum 5 znaków</string>
+    <string name="googleLoginError">Wystąpił błąd podczas logowania przez Google</string>
+
+    <string name="menuAddActivity">Dodaj wydarzenie</string>
+    <string name="menuAddGroup">Dodaj Grupę</string>
+    <string name="menuLogout">Wyloguj</string>
+    <string name="menuPreferences">Preferencje</string>
+    <string name="menuAllEvent">Wszystkie wydarzenia</string>
+    <string name="menuMyEvent">Moje wydarzenia</string>
+    <string name="menuMyGroup">Moje grupy</string>
+    <string name="menuSettings">Ustawienia</string>
+    <string name="menuMyProfile">Mój profil</string>
+    <string name="serverError">Wystąpił błąd serwera spróbuj ponownie później</string>
+    <string name="editTextGroupName">Nazwa grupy</string>
+    <string name="validateGroupName">Nazwa grupy musi mieć minimum 5 zaków</string>
+    <string name="successfullCreateGroup">Pomyślnie utworzono grupę</string>
+    <string name="tabChat">Czat</string>
+    <string name="tabGroupMember">Członkowie</string>
+    <string name="buttonEditGroup">Edytuj grupę</string>
+    <string name="deleteGroupPositiveButton">Tak</string>
+    <string name="deleteGroupNegativeButton">Nie</string>
+    <string name="textViewSwitchSound">Dzwięk</string>
+    <string name="textViewSwitchVibration">Wibracje</string>
+    <string name="textViewSwitchNotification">Notyfikacje</string>
+    <string name="groupActivityLeaveGroupMember">Opuść grupę</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nextbest.skalkowski.whatwedo.activity.EditGroupActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputGroupName"
+                android:layout_height="match_parent" >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="@string/editTextGroupName"
+                    android:ems="10"
+                    android:id="@+id/editTextGroupName" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:text="@string/buttonEditGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonEditGroup" />
+            <Button
+                android:text="@string/buttonEditGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonDeleteGroup" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "603574441879",
+    "firebase_url": "https://whadwedo.firebaseio.com",
+    "project_id": "whadwedo",
+    "storage_bucket": "whadwedo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603574441879:android:69d9b5a0e15c2909",
+        "android_client_info": {
+          "package_name": "com.nextbest.skalkowski.whatwedo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603574441879-lnr6q089vvm58c2s02v2178js8tmi2m5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nextbest.skalkowski.whatwedo",
+            "certificate_hash": "A6F7DCB6A7C5DEFDD1D4A8BC27896B8738E323CB"
+          }
+        },
+        {
+          "client_id": "603574441879-ehhenfr59fr73kbo099re9jdf47ibfk7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "603574441879-b3nm83iu0d1bjrcrac47mc84ocjbeoqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBre4wbCk4f6riu3wdItiLDbmr2kjrYhxk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603574441879-ehhenfr59fr73kbo099re9jdf47ibfk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
