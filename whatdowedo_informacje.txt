@@ -12,3 +12,6 @@ Główne kolory:
 Pozostałe kolory:
 Facebook - #385699
 Google + - #de4931
+
+Pozostałe informacje:
+kreski pod danymi - #ffffff ; opacity 20% (widoczności);
