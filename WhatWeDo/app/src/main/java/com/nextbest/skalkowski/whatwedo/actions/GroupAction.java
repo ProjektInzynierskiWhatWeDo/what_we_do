@@ -5,11 +5,11 @@ import android.util.Log;
 
 import com.nextbest.skalkowski.whatwedo.R;
 import com.nextbest.skalkowski.whatwedo.data_model.DeleteGroup;
+import com.nextbest.skalkowski.whatwedo.data_model.EditGroup;
 import com.nextbest.skalkowski.whatwedo.data_model.Group;
 import com.nextbest.skalkowski.whatwedo.data_model.StandardResponse;
-import com.nextbest.skalkowski.whatwedo.data_model.UserLoginResponse;
-import com.nextbest.skalkowski.whatwedo.fragments.AddGroup;
 import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
+import com.nextbest.skalkowski.whatwedo.local_database.UserGroups;
 import com.nextbest.skalkowski.whatwedo.serwer_connections.GroupService;
 import com.nextbest.skalkowski.whatwedo.serwer_connections.ServiceGenerator;
 
@@ -24,7 +24,7 @@ public class GroupAction extends Action {
         this.getResponse = getResponse;
     }
 
-    //fixme good
+
     public void addGroup(Group group, final String action) {
         GroupService groupService = ServiceGenerator.createServiceToken(GroupService.class);
         Call<StandardResponse> call = groupService.addGroup(group);
@@ -50,16 +50,26 @@ public class GroupAction extends Action {
         });
     }
 
-    public void editGroup(Group group, final String action) {
+    public void editGroup(final EditGroup editGroup, final String action) {
         GroupService groupService = ServiceGenerator.createServiceToken(GroupService.class);
-        Call<StandardResponse> call = groupService.editGroup(group);
+        Call<StandardResponse> call = groupService.editGroup(editGroup);
         call.enqueue(new Callback<StandardResponse>() {
             @Override
             public void onResponse(Call<StandardResponse> call, Response<StandardResponse> response) {
                 if (response.isSuccessful()) {
-
+                    if (response.body().getStatus() == STATUS_SUCCESS) {
+                        UserGroups.editGroupName(editGroup.getId(), editGroup.getName());
+                        refreshUserGroupsListView();
+                        getResponse.getResponseSuccess(action, action);
+                    } else {
+                        getResponse.getResponseFail(response.body().getMessage(), action);
+                    }
                 } else {
-
+                    if (response.code() == HTTP_RESPONSE_UNAUTHORIZED) {
+                        getResponse.getResponseTokenExpired();
+                    } else {
+                        getResponse.getResponseServerFail(R.string.serverError, action);
+                    }
                 }
             }
 
@@ -71,16 +81,27 @@ public class GroupAction extends Action {
         });
     }
 
-    public void deleteGroup(DeleteGroup deleteGroup, final String action) {
+
+    public void deleteGroup(final DeleteGroup deleteGroup, final String action) {
         GroupService groupService = ServiceGenerator.createServiceToken(GroupService.class);
         Call<StandardResponse> call = groupService.deleteGroup(deleteGroup);
         call.enqueue(new Callback<StandardResponse>() {
             @Override
             public void onResponse(Call<StandardResponse> call, Response<StandardResponse> response) {
                 if (response.isSuccessful()) {
-
+                    if (response.body().getStatus() == STATUS_SUCCESS) {
+                        //todo usunąć czat
+                        UserGroups.deleteGroupById(deleteGroup.getId());
+                        getResponse.getResponseSuccess(action, action);
+                    } else {
+                        getResponse.getResponseFail(response.body().getMessage(), action);
+                    }
                 } else {
-
+                    if (response.code() == HTTP_RESPONSE_UNAUTHORIZED) {
+                        getResponse.getResponseTokenExpired();
+                    } else {
+                        getResponse.getResponseServerFail(R.string.serverError, action);
+                    }
                 }
             }
 
@@ -90,6 +111,10 @@ public class GroupAction extends Action {
                 getResponse.getResponseServerFail(R.string.connectionError, action);
             }
         });
+    }
+
+    public void refreshUserGroupsListView(){
+   //todo refresh list view in mygroups view
     }
 
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line"
+    android:innerRadius="9dp">
+    <size android:height="9dp" />
+    <stroke android:color="@color/colorAccent"
+        />
+    <corners android:radius="9dp" />
+    <stroke
+        android:width="9dp"
+        android:color="@color/blackBackground" />
+    <stroke
+        android:width="9dp"
+        android:color="@color/cardview_shadow_end_color" />
+</shape>

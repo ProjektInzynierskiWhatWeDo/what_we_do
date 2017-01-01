@@ -20,9 +20,13 @@
                 android:id="@+id/textViewDistance" />
 
             <ProgressBar
-                style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@null"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/seek_bar_selector"
+                android:splitTrack="false"
+                android:thumb="@drawable/seek_bar_thumb"
                 android:id="@+id/progressBarDistance" />
 
             <TextView

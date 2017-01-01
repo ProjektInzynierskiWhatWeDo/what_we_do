@@ -36,12 +36,20 @@
     <string name="tabChat">Czat</string>
     <string name="tabGroupMember">Członkowie</string>
     <string name="buttonEditGroup">Edytuj grupę</string>
+    <string name="buttonDeleteGroup">Usuń grupę</string>
     <string name="deleteGroupPositiveButton">Tak</string>
     <string name="deleteGroupNegativeButton">Nie</string>
     <string name="textViewSwitchSound">Dzwięk</string>
     <string name="textViewSwitchVibration">Wibracje</string>
     <string name="textViewSwitchNotification">Notyfikacje</string>
     <string name="groupActivityLeaveGroupMember">Opuść grupę</string>
+    <string name="buttonManageMembers">Zarządzaj członkami</string>
+    <string name="textViewDeleteGroup">Czy na pewno chcesz usunąć grupę</string>
+    <string name="textViewDeleteGroupOk">Grupa została pomyślnie usunięta</string>
+    <string name="positiveButtonDeleteGroupOk">Ok</string>
+    <string name="titleActivityEditGroup">Edytuj grupę</string>
+    <string name="toastGroupNameChanged">Nazwa grupy została pomyślnie zmieniona</string>
+
 
     <string name="title_activity_main">MainActivity</string>
 
@@ -52,4 +60,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="googleClientId">603574441879-b3nm83iu0d1bjrcrac47mc84ocjbeoqm.apps.googleusercontent.com</string>
+    <string name="facebookKey">1308467285841512</string>
 </resources>
