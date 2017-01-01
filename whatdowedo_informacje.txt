@@ -7,7 +7,7 @@ Widoczna - #ffffff
 Szara (np. nie masz konta?) - #a2a1b8
 
 Główne kolory:
-żółty - #f6d258
+żółty - #f6c728
 
 Pozostałe kolory:
 Facebook - #385699
@@ -15,3 +15,6 @@ Google + - #de4931
 
 Pozostałe informacje:
 kreski pod danymi - #ffffff ; opacity 20% (widoczności);
+pod przyciskami są dwa cienie (material design):
+	* odległość 1 px (1dp) ; rozmiar 1 px (1dp) ; kolor #000000 ; opacity 50% ; <- to spowoduje solid shadow
+	* odległość 1 px (1dp) ; rozmiar 7 px (1dp) ; kolor #000000 ; opacity 50% ; <- to spowoduje soft shadow
