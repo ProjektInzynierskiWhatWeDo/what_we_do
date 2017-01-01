@@ -1,20 +1,35 @@
 Czcionka - Rodzina: Lato 
-Normalne napisy - Medium
-Pogrubione napisy - Semibold
+	Normalne napisy - Medium
+	Pogrubione napisy - Semibold
 
 Kolor czcionki: 
-Widoczna - #ffffff
-Szara (np. nie masz konta?) - #a2a1b8
+	Główny tekst (np. Zaloguj się) - #ffffff ; 100% opacity
+	Drugorzędny tekst (np. nie masz konta?)- #ffffff ; 70% opacity
+	Podpowiedzi - #ffffff ; 50% opacity
 
 Główne kolory:
-żółty - #f6c728
+	żółty - #ffc107
+	niebieski (menu) - #5061d2
+	niebieski ciemniejszy (pod stan baterii, zasięgu, godziny, etc) - #4857bd
 
 Pozostałe kolory:
-Facebook - #385699
-Google + - #de4931
+	Facebook - #385699
+	Google + - #de4931
 
 Pozostałe informacje:
-kreski pod danymi - #ffffff ; opacity 20% (widoczności);
-pod przyciskami są dwa cienie (material design):
-	* odległość 1 px (1dp) ; rozmiar 1 px (1dp) ; kolor #000000 ; opacity 50% ; <- to spowoduje solid shadow
-	* odległość 1 px (1dp) ; rozmiar 7 px (1dp) ; kolor #000000 ; opacity 50% ; <- to spowoduje soft shadow
+	Ogólne:
+		kreski pod danymi - #ffffff ; opacity 20% (widoczności);
+		tło paneli - #fafafa
+		pod przyciskami są dwa cienie (material design) -> https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-shadows
+	Switch:
+		Włączony:
+			żółty spód - #f2da8b
+			żółte kółko - #f6c728
+		Wyłączony:
+			szary spód - #bcbbbb
+			szare kółko - #f1f1f1
+	Preferencje:
+		pierwszy panel - #50a2d2
+		drugi panel - #6086d2
+		trzeci panel - #706bd2
+		czwarty panel - #8050d2
