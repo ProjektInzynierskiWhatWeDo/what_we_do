@@ -3,19 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/main"
-        android:title=""
-        android:orderInCategory="101"
-        app:showAsAction="always"
-        android:icon="@mipmap/ic_launcher">
+        android:id="@+id/action_leave_group"
+        android:title="@string/groupActivityLeaveGroupMember"
+        app:showAsAction="never" />
 
-        <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <item android:id="@+id/action_leave_group"
-                app:showAsAction="ifRoom"
-                android:title="@string/groupActivityLeaveGroupMember" />
-
-        </menu>
-
-    </item>
-    </menu>
+</menu>

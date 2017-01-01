@@ -6,12 +6,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 import com.nextbest.skalkowski.whatwedo.R;
+import com.nextbest.skalkowski.whatwedo.data_model.UserGroup;
 import com.nextbest.skalkowski.whatwedo.fragments.ChatFragment;
 import com.nextbest.skalkowski.whatwedo.fragments.GroupMemberFragment;
 import com.nextbest.skalkowski.whatwedo.local_database.LoggedUser;
@@ -45,17 +47,33 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ButterKnife.bind(this);
         userGroups = (UserGroups) getIntent().getSerializableExtra(PUT_EXTRA_USER_GROUP);
-
+        getSupportActionBar().setTitle(userGroups.getName());
         initializeViewPager();
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        getSupportActionBar().setTitle(UserGroups.getGroupName(userGroups.getGroup_id()));
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        this.finish();
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_edit_group:
+                openEditGroupActivity(userGroups);
+                break;
+            case R.id.action_manage_users:
+                openMemberManageActivity(userGroups);
+                break;
+            default:
+                this.finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -68,8 +86,9 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
         } else {
             inflater.inflate(R.menu.menu_group_member, menu);
         }
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
+
 
     public void initializeViewPager() {
         Bundle bundleChat = new Bundle();

@@ -68,7 +68,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.GroupActivity" />
-        <activity android:name=".activity.EditGroupActivity" />
+        <activity android:name=".activity.EditGroupActivity"
+            android:label="@string/titleActivityEditGroup"/>
         <activity android:name=".activity.MemberManageActivity"></activity>
     </application>
 

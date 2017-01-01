@@ -1,6 +1,7 @@
 package com.nextbest.skalkowski.whatwedo.local_database;
 
 import com.orm.SugarRecord;
+import com.orm.util.NamingHelper;
 
 import java.io.Serializable;
 
@@ -101,5 +102,21 @@ public class UserGroups extends SugarRecord implements Serializable {
 
     public void setFourth_image(String fourth_image) {
         this.fourth_image = fourth_image;
+    }
+
+    public static void deleteGroupById(int id){
+        UserGroups.deleteAll(UserGroups.class, NamingHelper.toSQLNameDefault("group_id") + " = ?", String.valueOf(id));
+        Members.deleteByGroupId(id);
+    }
+
+    public static void editGroupName(int groupId , String name){
+        UserGroups userGroups = UserGroups.find(UserGroups.class, NamingHelper.toSQLNameDefault("group_id") + " = ?", String.valueOf(groupId)).get(0);
+        userGroups.setName(name);
+        userGroups.save();
+    }
+
+    public static String getGroupName(int groupId){
+        UserGroups userGroups = UserGroups.find(UserGroups.class, NamingHelper.toSQLNameDefault("group_id") + " = ?", String.valueOf(groupId)).get(0);
+        return userGroups.getName();
     }
 }
