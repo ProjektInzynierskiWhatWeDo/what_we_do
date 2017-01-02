@@ -30,6 +30,13 @@ Pozostałe informacje:
 			szare kółko - #f1f1f1
 	Preferencje:
 		pierwszy panel - #50a2d2
-		drugi panel - #6086d2
-		trzeci panel - #706bd2
-		czwarty panel - #8050d2
+		drugi panel - #559ad2
+		trzeci panel - #5a92d2
+		czwarty panel - #5e8ad2
+		piąty panel - #6381d2
+		szósty panel - #6879d2
+		siódmy panel - #6d71d2
+		ósmy panel - #7269d2
+		dziewiąty panel - #7660d2
+		dziesiąty panel - #7b58d2
+		ostatni panel - #8050d2
