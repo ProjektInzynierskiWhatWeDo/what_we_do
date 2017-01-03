@@ -4,6 +4,13 @@
     android:id="@+id/activity_social_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
+=======
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+>>>>>>> Stashed changes
     tools:context="com.nextbest.skalkowski.whatwedo.activity.SocialLoginActivity">
 
 </RelativeLayout>
