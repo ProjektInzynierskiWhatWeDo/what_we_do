@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#5061d2</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blackBackground">#90000000</color>
+    <color name="mainBackground">#fafafa</color>
+
+
+    <color name="whiteText">#FFFFFF</color>
+    <color name="whiteOpacityText">#70FFFFFF</color>
+    <color name="buttonBlue">#385699</color>
+    <color name="buttonRed">#de4931</color>
+    <color name="buttonYellow">#ffc107</color>
+
+    <color name="preferences1">#50a2d2</color>
+    <color name="preferences2">#559ad2</color>
+    <color name="preferences3">#5a92d2</color>
+    <color name="preferences4">#5e8ad2</color>
+    <color name="preferences5">#6381d2</color>
+    <color name="preferences6">#6879d2</color>
+    <color name="preferences7">#6d71d2</color>
+    <color name="preferences8">#7269d2</color>
+    <color name="preferences9">#7660d2</color>
+    <color name="preferences10">#7b58d2</color>
+    <color name="preferences11">#8050d2</color>
+
+
+    <color name="switchActivated">#f6c728</color>
+    <color name="switchNormal">#f1f1f1</color>
+    <color name="switchForeground">#f1f1f1</color>
+    <color name="switchBackground">#00000000</color>
 </resources>

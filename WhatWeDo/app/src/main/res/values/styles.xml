@@ -23,4 +23,79 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="mainButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/mainButtonHeight</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/buttonStandardMarginLeftRight</item>
+        <item name="android:layout_marginRight">@dimen/buttonStandardMarginLeftRight</item>
+        <item name="android:layout_marginTop">@dimen/buttonStandardMarginTop</item>
+    </style>
+
+    <style name="buttonBlue" parent="mainButton">
+        <item name="android:textColor">@color/whiteText</item>
+        <item name="android:background">@drawable/button_blue_style</item>
+    </style>
+
+    <style name="buttonRed" parent="mainButton">
+        <item name="android:textColor">@color/whiteText</item>
+        <item name="android:background">@drawable/button_red_style</item>
+    </style>
+
+    <style name="buttonYellow" parent="mainButton">
+        <item name="android:textColor">@color/whiteText</item>
+        <item name="android:background">@drawable/button_yellow_style</item>
+    </style>
+
+    <style name="editTextMain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="editText1" parent="editTextMain">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/whiteText</item>
+    </style>
+
+    <style name="textInputLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:theme">@style/textImputLayoutTheme</item>
+        <item name="android:layout_marginTop">@dimen/TextInputLayoutMarginTop</item>
+        <item name="android:layout_marginRight">@dimen/buttonStandardMarginLeftRight</item>
+        <item name="android:layout_marginLeft">@dimen/buttonStandardMarginLeftRight</item>
+    </style>
+
+    <style name="textImputLayoutTheme">
+        <item name="colorAccent">@color/whiteText</item>
+        <item name="android:textColorHint">@color/whiteOpacityText</item>
+        <item name="colorControlNormal">@color/whiteOpacityText</item>
+        <item name="colorControlActivated">@color/whiteText</item>
+        <item name="colorControlHighlight">@color/whiteText</item>
+    </style>
+
+    <style name="listViewStyle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:divider">@null</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="switchPreferencesTheme">
+        <item name="colorControlActivated">@color/switchActivated</item>
+        <item name="colorSwitchThumbNormal">@color/switchNormal</item>
+        <item name="android:colorForeground">@color/switchForeground</item>
+    </style>
+
+    <style name="switchPreferences">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:theme">@style/switchPreferencesTheme</item>
+    </style>
+
+
+
 </resources>

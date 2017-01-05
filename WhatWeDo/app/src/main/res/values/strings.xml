@@ -49,6 +49,17 @@
     <string name="positiveButtonDeleteGroupOk">Ok</string>
     <string name="titleActivityEditGroup">Edytuj grupę</string>
     <string name="toastGroupNameChanged">Nazwa grupy została pomyślnie zmieniona</string>
+    
+    
+    
+    
+    <string name="buttonFacebook">Facebook</string>
+    <string name="buttonGoogle">Google +</string>
+    <string name="buttonLogin">Zaloguj się</string>
+    <string name="textViewNoAccount">Nie masz konta?</string>
+    <string name="textViewRegister">Zarejestruj się</string>
+    <string name="textViewLogin">Zaloguj się</string>
+    <string name="textViewPreferencesCount">Zaznaczone elementy:</string>
 
 
     <string name="title_activity_main">MainActivity</string>
@@ -62,5 +73,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="googleClientId">603574441879-b3nm83iu0d1bjrcrac47mc84ocjbeoqm.apps.googleusercontent.com</string>
-    <string name="facebookKey">1308467285841512</string>
+    <string name="facebookKey">1052227331589810</string>
 </resources>
