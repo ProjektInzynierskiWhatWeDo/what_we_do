@@ -1,14 +1,11 @@
 package com.nextbest.skalkowski.whatwedo.activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -16,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.nextbest.skalkowski.whatwedo.R;
 import com.nextbest.skalkowski.whatwedo.actions.UserActions;
 import com.nextbest.skalkowski.whatwedo.adapter.MenuAdapter;
@@ -30,7 +26,6 @@ import com.nextbest.skalkowski.whatwedo.fragments.UserPreferences;
 import com.nextbest.skalkowski.whatwedo.fragments.UserProfile;
 import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
 import com.nextbest.skalkowski.whatwedo.local_database.LoggedUser;
-import com.nextbest.skalkowski.whatwedo.local_database.Token;
 import com.nextbest.skalkowski.whatwedo.model.LoadingPage;
 import com.squareup.picasso.Picasso;
 

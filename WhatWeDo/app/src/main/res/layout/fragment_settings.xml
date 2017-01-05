@@ -12,71 +12,71 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textViewDistance"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewDistance" />
+                android:layout_height="wrap_content" />
 
             <ProgressBar
+                android:id="@+id/progressBarDistance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:indeterminate="false"
                 android:progressDrawable="@drawable/seek_bar_selector"
                 android:splitTrack="false"
-                android:thumb="@drawable/seek_bar_thumb"
-                android:id="@+id/progressBarDistance" />
+                android:thumb="@drawable/seek_bar_thumb" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/textViewSwitchNotification"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <android.support.v7.widget.SwitchCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switchNotification" />
+                    android:text="@string/textViewSwitchNotification" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchNotification"
+                    style="@style/switchPreferences" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/textViewSwitchVibration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <android.support.v7.widget.SwitchCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switchVibration" />
+                    android:text="@string/textViewSwitchVibration" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchVibration"
+                    style="@style/switchPreferences" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/textViewSwitchSound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <android.support.v7.widget.SwitchCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switchSound" />
+                    android:text="@string/textViewSwitchSound" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchSound"
+                    style="@style/switchPreferences" />
             </LinearLayout>
 
         </LinearLayout>

@@ -14,8 +14,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
-    public static final String API_BASE_URL = "https://nextbest.000webhostapp.com/projekt_inzynierski/public/api/";
-   // public static final String API_BASE_URL = "http://192.168.0.17/projekt_inzynierski/public/api/";
+    //public static final String API_BASE_URL = "https://nextbest.000webhostapp.com/projekt_inzynierski/public/api/";
+    public static final String API_BASE_URL = "http://192.168.0.17/projekt_inzynierski/public/api/";
+   // public static final String API_BASE_URL = "http://192.168.20.103/projekt_inzynierski/public/api/";
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 

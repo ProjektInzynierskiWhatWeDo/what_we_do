@@ -13,9 +13,18 @@ public class BasicActivity extends AppCompatActivity {
 
     public void openLoginActivity() {
         Intent openLoginActivity = new Intent(this, LoginActivity.class);
-        openLoginActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(openLoginActivity);
-        this.finish();
+    }
+
+    public void openRegisterActivity() {
+        Intent openRegisterActivity = new Intent(this, RegisterActivity.class);
+        startActivity(openRegisterActivity);
+    }
+
+    public void openSocialLoginActivity(){
+        Intent openSocialLoginActivity = new Intent(this,SocialLoginActivity.class);
+        openSocialLoginActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(openSocialLoginActivity);
     }
 
     public void openMainActivity() {

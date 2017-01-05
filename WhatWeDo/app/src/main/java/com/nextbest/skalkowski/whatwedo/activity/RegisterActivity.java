@@ -1,8 +1,8 @@
 package com.nextbest.skalkowski.whatwedo.activity;
 
 import android.app.ProgressDialog;
-import android.support.design.widget.TextInputLayout;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,8 +51,8 @@ public class RegisterActivity extends BasicActivity implements GetResponse {
     TextInputLayout editTextPasswordLayout;
     @BindView(R.id.editTextPasswordAgainLayout)
     TextInputLayout editTextPasswordAgainLayout;
-    @BindView(R.id.textViewPrivacy)
-    TextView textViewPrivacy;
+    @BindView(R.id.textViewLogin)
+    TextView textViewLogin;
 
     private UserActions userActions;
     private LoadBefore loadBefore;
@@ -72,6 +72,13 @@ public class RegisterActivity extends BasicActivity implements GetResponse {
         userActions = new UserActions(this);
         loadBefore = new LoadBefore(this);
         validator = new Validator(this);
+
+        textViewLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLoginActivity();
+            }
+        });
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,16 +153,16 @@ public class RegisterActivity extends BasicActivity implements GetResponse {
             closeProgressDialog();
             editTextEmailLayout.setErrorEnabled(true);
             editTextEmailLayout.setError(object.toString());
-        }else if(action.equals(ACTION_LOAD_DATA_BEFORE)){
-            Toast.makeText(this,R.string.loginError,Toast.LENGTH_LONG).show();
+        } else if (action.equals(ACTION_LOAD_DATA_BEFORE)) {
+            Toast.makeText(this, R.string.loginError, Toast.LENGTH_LONG).show();
             openLoginActivity();
         }
     }
 
     @Override
     public void getResponseServerFail(Object object, String action) {
-            closeProgressDialog();
-            Toast.makeText(this, (Integer) object, Toast.LENGTH_LONG).show();
+        closeProgressDialog();
+        Toast.makeText(this, (Integer) object, Toast.LENGTH_LONG).show();
     }
 
     @Override

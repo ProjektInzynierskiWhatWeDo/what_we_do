@@ -5,10 +5,12 @@ import android.util.Log;
 import com.nextbest.skalkowski.whatwedo.R;
 import com.nextbest.skalkowski.whatwedo.data_model.DeviceToken;
 import com.nextbest.skalkowski.whatwedo.data_model.GetUserResponse;
+import com.nextbest.skalkowski.whatwedo.data_model.SearchUser;
 import com.nextbest.skalkowski.whatwedo.data_model.StandardResponse;
 import com.nextbest.skalkowski.whatwedo.data_model.UserLogin;
 import com.nextbest.skalkowski.whatwedo.data_model.UserLoginResponse;
 import com.nextbest.skalkowski.whatwedo.data_model.UserLogoutResponse;
+import com.nextbest.skalkowski.whatwedo.data_model.UserSearchResponse;
 import com.nextbest.skalkowski.whatwedo.local_database.UserPreference;
 import com.nextbest.skalkowski.whatwedo.data_model.UserRegister;
 import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
@@ -180,17 +182,42 @@ public class UserActions extends Action {
 
     }
 
-    public void setUserDeviceToken(DeviceToken userDeviceToken , final String action){
+    public void setUserDeviceToken(DeviceToken userDeviceToken, final String action) {
         UserService userService = ServiceGenerator.createServiceToken(UserService.class);
         Call<StandardResponse> standardResponseCall = userService.setUserDeviceToken(userDeviceToken);
         standardResponseCall.enqueue(new Callback<StandardResponse>() {
             @Override
             public void onResponse(Call<StandardResponse> call, Response<StandardResponse> response) {
-                getResponse.getResponseSuccess(action,action);
+                getResponse.getResponseSuccess(action, action);
             }
 
             @Override
             public void onFailure(Call<StandardResponse> call, Throwable t) {
+                Log.d("Action", "onFailure: " + t.getMessage());
+                getResponse.getResponseServerFail(R.string.connectionError, action);
+            }
+        });
+    }
+
+    public void findUser(SearchUser searchUser, final String action) {
+        UserService userService = ServiceGenerator.createServiceToken(UserService.class);
+        Call<UserSearchResponse> userSearchResponseCall = userService.findUser(searchUser);
+        userSearchResponseCall.enqueue(new Callback<UserSearchResponse>() {
+            @Override
+            public void onResponse(Call<UserSearchResponse> call, Response<UserSearchResponse> response) {
+                if (response.isSuccessful()) {
+                    getResponse.getResponseSuccess(response.body().getMessage(), action);
+                } else {
+                    if (response.code() == HTTP_RESPONSE_UNAUTHORIZED) {
+                        getResponse.getResponseTokenExpired();
+                    } else {
+                        getResponse.getResponseServerFail(R.string.serverError, action);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserSearchResponse> call, Throwable t) {
                 Log.d("Action", "onFailure: " + t.getMessage());
                 getResponse.getResponseServerFail(R.string.connectionError, action);
             }
