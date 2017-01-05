@@ -40,3 +40,10 @@ Pozostałe informacje:
 		dziewiąty panel - #7660d2
 		dziesiąty panel - #7b58d2
 		ostatni panel - #8050d2
+	Moje grupy:
+		Czcionka nazwy grupy - Lato Semibold Italic
+		Kolor ~||~ - #000000
+		Czcionka ilości użytkowników - Lato Medium
+		Kolor czcionki z użytkownikami - #000000 ; 80% opacity;
+		Kreska oddzielająca - #000000 ; 20% opacity;
+	Mój profil:
