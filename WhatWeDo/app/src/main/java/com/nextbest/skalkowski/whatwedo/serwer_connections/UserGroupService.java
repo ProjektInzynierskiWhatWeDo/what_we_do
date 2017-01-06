@@ -4,6 +4,7 @@ package com.nextbest.skalkowski.whatwedo.serwer_connections;
 import com.nextbest.skalkowski.whatwedo.data_model.GetGroupMember;
 import com.nextbest.skalkowski.whatwedo.data_model.GroupMemberResponse;
 import com.nextbest.skalkowski.whatwedo.data_model.InviteUser;
+import com.nextbest.skalkowski.whatwedo.data_model.LeaveGroup;
 import com.nextbest.skalkowski.whatwedo.data_model.ResponseToInvite;
 import com.nextbest.skalkowski.whatwedo.data_model.StandardResponse;
 import com.nextbest.skalkowski.whatwedo.data_model.UserGroupsResponse;
@@ -17,12 +18,12 @@ public interface UserGroupService {
     @POST("sendInviteToUser")
     Call<StandardResponse> sendInviteToUser(@Body InviteUser inviteUser);
 
-    @POST("responseToInvite")
-    Call<StandardResponse> responseToInvite(@Body ResponseToInvite responseToInvite);
-
-    @GET("getUserGroupsAndInviteToGroup")
-    Call<UserGroupsResponse> getUsersGroupsAndInvite();
+    @GET("getUserGroups")
+    Call<UserGroupsResponse> getUserGroups();
 
     @POST("getGroupMember")
     Call<GroupMemberResponse> getGroupMember(@Body GetGroupMember getGroupMember);
+
+    @POST("leaveGroup")
+    Call<StandardResponse> leaveGroup(@Body LeaveGroup leaveGroup);
 }

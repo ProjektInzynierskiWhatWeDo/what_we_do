@@ -1,12 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/linearLayoutMain">
+    android:id="@+id/linearLayoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="TextView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewName" />
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/myGroupImageViewFullWithHeight"
+                android:layout_height="@dimen/myGroupImageViewFullWithHeight"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/relativeLayoutGroupImageMarginTop">
+
+                <ImageView
+                    android:id="@+id/imageViewOne"
+                    android:layout_width="@dimen/myGroupImageViewFullWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewFullWithHeight"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewTwoLeft"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewFullWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewTwoRight"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewFullWithHeight"
+                    android:layout_marginLeft="@dimen/myGroupImageViewHalfWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewFourLeftTop"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewHalfWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewFourLeftBottom"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_marginTop="@dimen/myGroupImageViewHalfWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewFourRightTop"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_marginLeft="@dimen/myGroupImageViewHalfWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewFourRightBottom"
+                    android:layout_width="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_height="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_marginLeft="@dimen/myGroupImageViewHalfWithHeight"
+                    android:layout_marginTop="@dimen/myGroupImageViewHalfWithHeight"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewCircle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/circle_to_my_group" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textViewCountGroupUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
 </LinearLayout>
+

@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.nextbest.skalkowski.whatwedo.R;
 import com.nextbest.skalkowski.whatwedo.actions.UserGroupAction;
+import com.nextbest.skalkowski.whatwedo.adapter.GroupMemberOwnerAdapter;
 import com.nextbest.skalkowski.whatwedo.adapter.MemberListAdapter;
 import com.nextbest.skalkowski.whatwedo.data_model.GetGroupMember;
 import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
@@ -17,8 +18,11 @@ import com.nextbest.skalkowski.whatwedo.data_model.GroupMemberResponse;
 import com.nextbest.skalkowski.whatwedo.local_database.LoggedUser;
 import com.nextbest.skalkowski.whatwedo.data_model.Member;
 import com.nextbest.skalkowski.whatwedo.local_database.Members;
+import com.nextbest.skalkowski.whatwedo.model.CustomEventBusMessage;
 import com.nextbest.skalkowski.whatwedo.model.SessionExpired;
 import com.orm.util.NamingHelper;
+
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class GroupMemberFragment extends BasicFragment implements GetResponse {
+public class GroupMemberFragment extends EventBusFragment implements GetResponse {
 
 
     @BindView(R.id.listViewMembers)
@@ -72,8 +76,8 @@ public class GroupMemberFragment extends BasicFragment implements GetResponse {
 
     private void loadMembersFromLocalDatabase() {
         ArrayList<Members> members = (ArrayList<Members>) Members.find(Members.class, NamingHelper.toSQLNameDefault("group_id") + " = ?", String.valueOf(groupId));
-        MemberListAdapter memberListAdapter = new MemberListAdapter(getContext(), members);
-        listViewMembers.setAdapter(memberListAdapter);
+        GroupMemberOwnerAdapter groupMemberOwnerAdapter = new GroupMemberOwnerAdapter(getContext(), members,ownerId);
+        listViewMembers.setAdapter(groupMemberOwnerAdapter);
     }
 
     private void loadMembersFromServer() {
@@ -102,5 +106,12 @@ public class GroupMemberFragment extends BasicFragment implements GetResponse {
     public void getResponseTokenExpired() {
         SessionExpired sessionExpired = new SessionExpired();
         sessionExpired.sessionExpired(getContext());
+    }
+
+    @Subscribe
+    public void onEvent(CustomEventBusMessage event) {
+        if (event.getCustomMessage().equals(ACTION_REFRESH_USER_LIST)) {
+            loadMembersFromLocalDatabase();
+        }
     }
 }

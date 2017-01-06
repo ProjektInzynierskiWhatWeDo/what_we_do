@@ -12,4 +12,8 @@
     <dimen name="buttonStandardMarginTop">10dp</dimen>
     <dimen name="buttonCircle">40dp</dimen>
     <dimen name="TextInputLayoutMarginTop">8dp</dimen>
+    <dimen name="relativeLayoutGroupImageMarginTop">20dp</dimen>
+    <dimen name="myGroupImageViewFullWithHeight">80dp</dimen>
+    <dimen name="myGroupImageViewHalfWithHeight">40dp</dimen>
+
 </resources>

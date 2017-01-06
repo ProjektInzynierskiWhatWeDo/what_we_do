@@ -1,15 +1,21 @@
 package com.nextbest.skalkowski.whatwedo.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.nextbest.skalkowski.whatwedo.data_model.UserGroup;
 import com.nextbest.skalkowski.whatwedo.local_database.UserGroups;
 
+import org.greenrobot.eventbus.EventBus;
+
 
 public class BasicActivity extends AppCompatActivity {
 
     private static final String PUT_EXTRA_USER_GROUP = "put_extra_user_group";
+
 
     public void openLoginActivity() {
         Intent openLoginActivity = new Intent(this, LoginActivity.class);

@@ -4,10 +4,15 @@
     android:layout_height="match_parent"
     tools:context="com.nextbest.skalkowski.whatwedo.fragments.MyGroups">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <GridView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainerMyGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/gridViewGroups" />
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/gridViewGroups"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </FrameLayout>

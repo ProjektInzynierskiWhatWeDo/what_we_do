@@ -8,10 +8,14 @@ import com.nextbest.skalkowski.whatwedo.data_model.DeleteGroup;
 import com.nextbest.skalkowski.whatwedo.data_model.EditGroup;
 import com.nextbest.skalkowski.whatwedo.data_model.Group;
 import com.nextbest.skalkowski.whatwedo.data_model.StandardResponse;
+import com.nextbest.skalkowski.whatwedo.fragments.EventBusFragment;
 import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
 import com.nextbest.skalkowski.whatwedo.local_database.UserGroups;
+import com.nextbest.skalkowski.whatwedo.model.CustomEventBusMessage;
 import com.nextbest.skalkowski.whatwedo.serwer_connections.GroupService;
 import com.nextbest.skalkowski.whatwedo.serwer_connections.ServiceGenerator;
+
+import org.greenrobot.eventbus.EventBus;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,6 +27,7 @@ public class GroupAction extends Action {
     public GroupAction(GetResponse getResponse) {
         this.getResponse = getResponse;
     }
+    public static final String ACTION_CHANGE_USER_GROUPS = "action_change_user_groups";
 
 
     public void addGroup(Group group, final String action) {
@@ -114,7 +119,9 @@ public class GroupAction extends Action {
     }
 
     public void refreshUserGroupsListView(){
-   //todo refresh list view in mygroups view
+        CustomEventBusMessage customEventBusMessage = new CustomEventBusMessage();
+        customEventBusMessage.setCustomMessage(ACTION_CHANGE_USER_GROUPS);
+        EventBus.getDefault().post(customEventBusMessage);
     }
 
 

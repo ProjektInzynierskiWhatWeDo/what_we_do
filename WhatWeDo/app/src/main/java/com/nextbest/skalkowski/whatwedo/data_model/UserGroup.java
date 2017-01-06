@@ -9,15 +9,13 @@ public class UserGroup implements Serializable{
     private int group_id;
     private int owner_id;
     private String name;
-    private int status;
     private int count;
     private List<GroupMemberImage> member_image = null;
 
-    public UserGroup(int group_id, int owner_id, String name, int status, int count, List<GroupMemberImage> member_image) {
+    public UserGroup(int group_id, int owner_id, String name, int count, List<GroupMemberImage> member_image) {
         this.group_id = group_id;
         this.owner_id = owner_id;
         this.name = name;
-        this.status = status;
         this.count = count;
         this.member_image = member_image;
     }
@@ -46,13 +44,6 @@ public class UserGroup implements Serializable{
         this.name = name;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public int getCount() {
         return count;

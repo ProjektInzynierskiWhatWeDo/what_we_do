@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WhatWeDo</string>
+    <string name="app_name">Co i kiedy</string>
     <string name="connectionError">Brak połączenia z internetem</string>
     <string name="connectionAppError">Nie można się zalogować przepraszamy za userki</string>
     <string name="connectionAppErrorRegister">Nie można się zarejestrować przepraszamy za userki</string>
@@ -49,6 +49,7 @@
     <string name="positiveButtonDeleteGroupOk">Ok</string>
     <string name="titleActivityEditGroup">Edytuj grupę</string>
     <string name="toastGroupNameChanged">Nazwa grupy została pomyślnie zmieniona</string>
+    <string name="autoCompleteTextViewSearchUserHint">Szukaj użytkownika</string>
     
     
     

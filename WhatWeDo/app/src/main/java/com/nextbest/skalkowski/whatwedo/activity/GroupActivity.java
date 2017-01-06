@@ -13,11 +13,14 @@ import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 import com.nextbest.skalkowski.whatwedo.R;
+import com.nextbest.skalkowski.whatwedo.actions.UserGroupAction;
 import com.nextbest.skalkowski.whatwedo.data_model.UserGroup;
 import com.nextbest.skalkowski.whatwedo.fragments.ChatFragment;
 import com.nextbest.skalkowski.whatwedo.fragments.GroupMemberFragment;
+import com.nextbest.skalkowski.whatwedo.interfaces.GetResponse;
 import com.nextbest.skalkowski.whatwedo.local_database.LoggedUser;
 import com.nextbest.skalkowski.whatwedo.local_database.UserGroups;
+import com.nextbest.skalkowski.whatwedo.model.SessionExpired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GroupActivity extends BasicActivity implements ViewPager.OnPageChangeListener {
+public class GroupActivity extends BasicActivity implements ViewPager.OnPageChangeListener , GetResponse{
 
     @BindView(R.id.tabGroup)
     TabLayout tabGroup;
@@ -42,6 +45,8 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
     private static final String PUT_EXTRA_ACTION_ID = "put_extra_action_id";
     private static final String PUT_EXTRA_OWNER_ID = "put_extra_owner_id";
 
+    private UserGroupAction userGroupAction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,7 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ButterKnife.bind(this);
         userGroups = (UserGroups) getIntent().getSerializableExtra(PUT_EXTRA_USER_GROUP);
+        userGroupAction = new UserGroupAction(this);
         getSupportActionBar().setTitle(userGroups.getName());
         initializeViewPager();
     }
@@ -70,6 +76,9 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
                 break;
             case R.id.action_manage_users:
                 openMemberManageActivity(userGroups);
+                break;
+            case R.id.action_leave_group:
+                userGroupAction.
                 break;
             default:
                 this.finish();
@@ -127,6 +136,27 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
 
     }
 
+    @Override
+    public void getResponseSuccess(Object object, String action) {
+
+    }
+
+    @Override
+    public void getResponseFail(Object object, String action) {
+
+    }
+
+    @Override
+    public void getResponseServerFail(Object object, String action) {
+
+    }
+
+    @Override
+    public void getResponseTokenExpired() {
+        SessionExpired sessionExpired = new SessionExpired();
+        sessionExpired.sessionExpired(this);
+    }
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
@@ -156,4 +186,6 @@ public class GroupActivity extends BasicActivity implements ViewPager.OnPageChan
         }
 
     }
+
+
 }

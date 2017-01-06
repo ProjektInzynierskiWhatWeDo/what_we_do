@@ -39,9 +39,18 @@ public class UserGroupAction extends Action {
             @Override
             public void onResponse(Call<StandardResponse> call, Response<StandardResponse> response) {
                 if (response.isSuccessful()) {
+                    if(response.body().getStatus() == STATUS_SUCCESS){
+                        getResponse.getResponseSuccess(response.body().getMessage(),action);
+                    }else {
+                        getResponse.getResponseFail(response.body().getMessage(),action);
+                    }
 
                 } else {
-
+                    if (response.code() == HTTP_RESPONSE_UNAUTHORIZED) {
+                        getResponse.getResponseTokenExpired();
+                    } else {
+                        getResponse.getResponseServerFail(R.string.serverError, action);
+                    }
                 }
             }
 
@@ -53,30 +62,10 @@ public class UserGroupAction extends Action {
         });
     }
 
-    public void responseToInvite(ResponseToInvite responseToInvite, final String action) {
-        UserGroupService userGroupService = ServiceGenerator.createServiceToken(UserGroupService.class);
-        Call<StandardResponse> call = userGroupService.responseToInvite(responseToInvite);
-        call.enqueue(new Callback<StandardResponse>() {
-            @Override
-            public void onResponse(Call<StandardResponse> call, Response<StandardResponse> response) {
-                if (response.isSuccessful()) {
 
-                } else {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<StandardResponse> call, Throwable t) {
-                Log.d(getClass().getName(), "onFailure: " + t.getMessage());
-                getResponse.getResponseServerFail(R.string.connectionError, action);
-            }
-        });
-    }
-
-    public void getUserGroupsAndInvite(final String action) {
+    public void getUserGroups(final String action) {
         final UserGroupService userGroupService = ServiceGenerator.createServiceToken(UserGroupService.class);
-        Call<UserGroupsResponse> userGroupsResponseCall = userGroupService.getUsersGroupsAndInvite();
+        Call<UserGroupsResponse> userGroupsResponseCall = userGroupService.getUserGroups();
         userGroupsResponseCall.enqueue(new Callback<UserGroupsResponse>() {
             @Override
             public void onResponse(Call<UserGroupsResponse> call, Response<UserGroupsResponse> response) {
@@ -103,7 +92,7 @@ public class UserGroupAction extends Action {
                             i++;
                         }
                         new UserGroups(userGroup.getGroup_id(), userGroup.getOwner_id(), userGroup.getName(),
-                                userGroup.getStatus(), userGroup.getCount(), first_image, second_image, third_image, fourth_image).save();
+                               userGroup.getCount(), first_image, second_image, third_image, fourth_image).save();
                     }
                     getResponse.getResponseSuccess(action, action);
                 } else {
