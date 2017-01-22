@@ -46,5 +46,6 @@ Pozostałe informacje:
 		Czcionka ilości użytkowników - Lato Medium
 		Kolor czcionki z użytkownikami - #000000 ; 80% opacity;
 		Kreska oddzielająca - #000000 ; 20% opacity;
+		Ikonka search i głosowa - #000000; 54% opacity;
 	Menu boczne:
 		Kolor - niebieski ciemniejszy - #4857bd
